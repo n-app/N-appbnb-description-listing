@@ -2,7 +2,7 @@
 .DS_store
 
 ##npm packages
-node_module/
+node_modules/
 
 ##webpack default output folder
 dist/

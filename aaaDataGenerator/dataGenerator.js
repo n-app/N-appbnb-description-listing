@@ -1,16 +1,15 @@
 window.onload = function () {
 
-
-
-let homeSchema = mongoose.Schema({
+  let homeSchema = mongoose.Schema({
     "id": Number,
     "owner": String,
     "ownerPicture_url": String,
     "propertyType": String,
     "title": String,
+    "superHost": Boolean,
     "location": String,
     "numberOfGuests": Number,
-    "studio": Boolean
+    "studio": Boolean,
     "numberOfRooms": Number,
     "numberBeds": Number,
     "numberOfBaths": Number,
@@ -35,15 +34,5 @@ let homeSchema = mongoose.Schema({
     "nightsOfMinimumStay": Number,
     "nightsOfMinimumStayForDateRange": Schema.Types.Mixed,
     "daysFromLastUpdate": Number
-};
-
-
-
-
-
-
-
-
-
-
+  }
 }
