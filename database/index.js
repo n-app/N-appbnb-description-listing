@@ -31,7 +31,7 @@ const homeSchema = mongoose.Schema({
   noSafeForChildrenUnder: Number,
   checkInStartTime: Number,
   checkInEndTime: Number,
-  checkOutTime: 11,
+  checkOutTime: Number,
   selfCheckInWithLockBox: Boolean,
   rules: String,
   rulesToAcknoledge: String,
@@ -52,6 +52,7 @@ const save = (homeArray) => {
     item.save((err) => {
       if (err) return console.error(err);
       console.log('success saving a home!');
+      return console.log('db item.save success');
     });
   });
 };
@@ -60,11 +61,9 @@ const get = (callback, id) => {
   Home.find({ id }, (err, item) => {
     if (err) console.log('error from get db function', err);
     callback(item);
-    console.log('fromt he get db request', item);
+    console.log('from the get db request ->', item);
   });
 };
 
 module.exports.save = save;
 module.exports.get = get;
-
-
