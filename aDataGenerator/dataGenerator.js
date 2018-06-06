@@ -1,3 +1,5 @@
+const db = require('../database/index');
+
 const loremIpsum = [
   'lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur',
   'adipiscing', 'elit', 'curabitur', 'vel', 'hendrerit', 'libero',
@@ -196,7 +198,7 @@ for (let i = 0; i < 100; i += 1) {
     homeHighlights: highlightsArray(),
     descriptionSummary: arbitrarySentence(loremIpsum, randomInterger(25, 50), true),
     description: descriptionArray(),
-    Amenities: amenitiesArray(),
+    amenities: amenitiesArray(),
     sleepingArrangments: null,
     smoking: randomInterger(1, 100) < 25,
     petSuitable: randomInterger(1, 100) < 25,
@@ -206,7 +208,7 @@ for (let i = 0; i < 100; i += 1) {
     checkInEndTime: randomInterger(9, 11),
     checkOutTime: 11,
     selfCheckInWithLockBox: randomInterger(1, 100) < 75,
-    Rules: arbitrarySentence(loremIpsum, randomInterger(8, 300), true),
+    aules: arbitrarySentence(loremIpsum, randomInterger(8, 300), true),
     rulesToAcknoledge: arbitrarySentence(loremIpsum, randomInterger(6, 36), true),
     cancellationType: randomInterger(1, 5),
     cancelationSummary: arbitrarySentence(loremIpsum, randomInterger(20, 60), true),
@@ -218,38 +220,6 @@ for (let i = 0; i < 100; i += 1) {
   homeData.push(homeInstance);
 }
 
-const homeInstance = {
-  id: String,
-  owner: String,
-  ownerPicture_url: String,
-  propertyType: String,
-  title: String,
-  score: Number,
-  location: String,
-  numberOfGuests: Number,
-  numberOfRooms: Number,
-  numberBeds: Number,
-  numberOfBaths: Number,
-  numberOfViews: Number,
-  homeHighlights: Schema.Types.Mixed,
-  descriptionSummary: String,
-  description: Schema.Types.Mixed,
-  Amenities: Schema.Types.Mixed,
-  sleepingArrangments: Schema.Types.Mixed,
-  smoking: Boolean,
-  petSuitable: Boolean,
-  partiesOrEvents: Boolean,
-  noSafeForChildrenUnder: Number,
-  checkInStartTime: Number,
-  checkInEndTime: Number,
-  checkOutTime: 11,
-  selfCheckInWithLockBox: Boolean,
-  Rules: String,
-  rulesToAcknoledge: String,
-  cancellationType: Number,
-  cancelationSummary: String,
-  nightsOfStayVary: Boolean,
-  nightsOfMinimumStay: Number,
-  nightsOfMinimumStayForDateRange: Schema.Types.Mixed,
-  daysFromLastUpdate: Number,
-};
+db.save(homeData);
+
+module.exports.homeData = homeData;
