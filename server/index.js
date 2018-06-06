@@ -9,13 +9,12 @@ app.use(express.static(__dirname.concat('../public')));
 app.use(bodyParser.json());
 
 app.post('/homes', (req, res) => {
-  db.save(req.body);
-  res.sendStatus(201);
+  db.save(req.body, () => res.sendStatus(201));
 });
 
 app.get('/homes', (req, res) => {
   let data;
-  db.get((query) => {
+  db.get(req.body, (query) => {
     data = JSON.stringify(query);
     res.send(data);
   });
@@ -24,5 +23,4 @@ app.get('/homes', (req, res) => {
 db.get(x => console.log(x), 1099);
 
 const port = 3001;
-
 app.listen(port, () => console.log(`listening on port ${port}`));
