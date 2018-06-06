@@ -9,7 +9,7 @@ app.use(express.static(__dirname.concat('../public')));
 app.use(bodyParser.json());
 
 app.post('/homes', (req, res) => {
-  db.save(homeData);
+  db.save(req.body);
   res.sendStatus(201);
 });
 
@@ -20,6 +20,8 @@ app.get('/homes', (req, res) => {
     res.send(data);
   });
 });
+
+db.get(x => console.log(x), 1099);
 
 const port = 3001;
 
