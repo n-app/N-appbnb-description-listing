@@ -45,7 +45,7 @@ const homeSchema = mongoose.Schema({
 
 const Home = mongoose.model('Home', homeSchema);
 
-const save = (homeArray) => {
+const save = (homeArray, callback) => {
   homeArray.forEach((home) => {
     const item = new Home(home);
 
@@ -55,9 +55,10 @@ const save = (homeArray) => {
       return console.log('db item.save success');
     });
   });
+  callback();
 };
 
-const get = (callback, id) => {
+const get = (id, callback) => {
   Home.find({ id }, (err, item) => {
     if (err) console.log('error from get db function', err);
     callback(item);
