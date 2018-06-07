@@ -59,7 +59,7 @@ const save = (homeArray, callback) => {
 };
 
 const get = (id, callback) => {
-  Home.find({ id: 1004 }, (err, item) => {
+  Home.find({ id }, (err, item) => {
     if (err) console.log('error from get db function', err);
     callback(item);
     console.log('from the get db request ->', item);
