@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from './Header';
 import Accomodations from './Accomodations';
 import ViewsAlert from './ViewsAlert';
+import Highlights from './HomeHighlights';
 import '../../../css/main.css';
 
 class App extends React.Component {
@@ -31,10 +32,11 @@ class App extends React.Component {
       return (
         <div>
           <div id="board">
-            <div className="propertyTypeTitle">{this.state.home.propertyType}</div>
+            <div className="title_0 " >{this.state.home.propertyType}</div>
             <Header data={this.state.home} />
             <Accomodations data={this.state.home} />
             <ViewsAlert data={this.state.home.numberOfViews} />
+            <Highlights data={this.state.home.homeHighlights} />
           </div>
         </div>
       );

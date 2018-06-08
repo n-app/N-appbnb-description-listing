@@ -2,8 +2,8 @@ import React from 'react';
 
 const Header = (props) => {
   return (
-    <hgroup id="listingHeader">
-      <div className="headerPropertyInfo">
+    <hgroup id="listingHeader" >
+      <div className="headerPropertyInfo" >
         <div className="listingTitle" >{props.data.title}</div>
         <div className="listingLocation" >{props.data.location}</div>
       </div>

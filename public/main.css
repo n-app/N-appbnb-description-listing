@@ -11,10 +11,27 @@
 
 /*======Titles======*/
 
-.smallTitle {
+.title_0 {
+  font-size: 9px;
+  font-weight: 600; 
+}
+
+.title_1 {
   font-size: 14px;
   font-weight: 500; 
 }
+
+.title_2 {
+  font-size: 16px;
+  font-weight: 500; 
+}
+
+/*=========icons=======*/
+
+.icon_1 {
+  height: 16px;
+}
+
 
 /*=========Light borders=======*/
 
@@ -25,12 +42,6 @@
 }
 
 /*=========HEADER=======*/
-
-
-.propertyTypeTitle {
-  font-size: 9px;
-  font-weight: 600; 
-}
 
 #listingHeader {
   display: flex;
@@ -138,6 +149,67 @@ justify-content: space-around;
 
 .lightBulbImage {
   width: 40px;
+}
+
+/*=========Highlights=======*/
+
+#highlightsBoard {
+  margin-top: 25px;
+  padding: 15px;
+}
+
+.allHighlights {
+  margin-top: 10px;
+}
+
+.action_1 div:hover {
+  color: green;
+}
+
+/*.highlight {
+  display: flex;
+  /*flex-direction: row;*/
+
+.highlightTitle {
+  float: left;
+  font-weight: 600;
+  font-size: 14px;
+  margin-right: 4px
+}
+.highlightText {
+  position: relative;
+  font-weight: 300; 
+  font-size: 14px;
+}
+
+.highlightFeedBack {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ margin-top: 10px;
+ margin-bottom:  20px; 
+}
+
+.highlightFeedback_1 {
+  margin-right: 3px;
+}
+
+.highlightThumbsUp { 
+  width: 14px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.dot {
+  margin-left: 3px;
+}
+
+.highlightFeedback_2 {
+  margin-left: 3px;
+}
+
+.highlightFeedBack div:hover {
+  color: #19b58b;
 }
 
 
