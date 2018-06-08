@@ -77,22 +77,22 @@ const optionalDescriptionSections = ['Guess access', 'Interaction with guests', 
 const amenitiesSections = ['Family features', 'Dining', 'Facilities', 'Guess access', 'Logistics', 'Bed and bath',
   'Safety features', 'Outdoor'];
 
-const randomInterger = (min, max) => Math.floor(Math.random() * ((max - min) + 1)) + min;
+const randomInteger = (min, max) => Math.floor(Math.random() * ((max - min) + 1)) + min;
 
-const arbitrarySentence = (arrEntry, numOfWords, period) => {
+const arbitrarySentence = (arrEntry, numOfWords, hasPeriod) => {
   let outputString = '';
   for (let i = 0; i < numOfWords; i += 1) {
     if (i === 0) {
-      let word = arrEntry[randomInterger(0, arrEntry.length - 1)].split('');
+      let word = arrEntry[randomInteger(0, arrEntry.length - 1)].split('');
       word[0] = word[0].toUpperCase();
       word = word.join('');
       outputString += word;
     } else {
       outputString += ' ';
-      outputString += arrEntry[randomInterger(0, arrEntry.length - 1)];
+      outputString += arrEntry[randomInteger(0, arrEntry.length - 1)];
     }
   }
-  if (period) {
+  if (hasPeriod) {
     outputString += '.';
   }
   return outputString;
@@ -104,7 +104,7 @@ const highlightsArray = () => {
   highlights.forEach((title) => {
     const obj = {
       title,
-      comment: arbitrarySentence(loremIpsum, randomInterger(8, 16), true),
+      comment: arbitrarySentence(loremIpsum, randomInteger(8, 16), true),
     };
     output.push(obj);
   });
@@ -115,13 +115,13 @@ const descriptionArray = () => {
   const output = [];
   const spaceDescription = {
     title: 'The space',
-    comment: arbitrarySentence(loremIpsum, randomInterger(192, 288), true),
+    comment: arbitrarySentence(loremIpsum, randomInteger(192, 288), true),
   };
   output.push(spaceDescription);
   optionalDescriptionSections.forEach((title) => {
     const obj = {
       title,
-      comment: arbitrarySentence(loremIpsum, randomInterger(86, 192), true),
+      comment: arbitrarySentence(loremIpsum, randomInteger(86, 192), true),
     };
     output.push(obj);
   });
@@ -132,15 +132,15 @@ const specialStayRangeArray = () => {
   const output = [];
   let count = 0;
 
-  for (let i = 0; i < randomInterger(0, 3); i += 1) {
+  for (let i = 0; i < randomInteger(0, 3); i += 1) {
     const obj = {
-      startDate: new Date(2018, 7 + count, randomInterger(1, 15)),
-      endDate: new Date(2018, 7 + count + 1, randomInterger(16, 30)),
-      nightsOfMinimumStay: randomInterger(4, 6),
+      startDate: new Date(2018, 7 + count, randomInteger(1, 15)),
+      endDate: new Date(2018, 7 + count + 1, randomInteger(16, 30)),
+      nightsOfMinimumStay: randomInteger(4, 6),
     };
     output.push(obj);
     count += 1;
-    count += randomInterger(1, 2);
+    count += randomInteger(1, 2);
   }
   return output;
 };
@@ -151,8 +151,8 @@ const amenitiesArray = () => {
     const arrayOfEntries = [];
     for (let i = 0; i < numberOfEntries; i += 1) {
       const obj = {
-        item: arbitrarySentence(loremIpsum, randomInterger(1, 2)),
-        description: randomInterger(1, 100) > 25 ? '' : arbitrarySentence(loremIpsum, randomInterger(4, 14)),
+        item: arbitrarySentence(loremIpsum, randomInteger(1, 2)),
+        description: randomInteger(1, 100) > 25 ? '' : arbitrarySentence(loremIpsum, randomInteger(4, 14)),
       };
       arrayOfEntries.push(obj);
     }
@@ -161,19 +161,19 @@ const amenitiesArray = () => {
 
   const basics = {
     title: 'Basic',
-    contents: listOfItems(randomInterger(4, 14)),
+    contents: listOfItems(randomInteger(4, 14)),
   };
   output.push(basics);
-  for (let i = randomInterger(0, 3); i < randomInterger(4, 7); i += 1) {
+  for (let i = randomInteger(0, 3); i < randomInteger(4, 7); i += 1) {
     const obj = {
       title: amenitiesSections[i],
-      contents: listOfItems(randomInterger(0, 8)),
+      contents: listOfItems(randomInteger(0, 8)),
     };
     output.push(obj);
   }
   const notIncluded = {
     title: 'Not Included',
-    contents: listOfItems(randomInterger(2, 8)),
+    contents: listOfItems(randomInteger(2, 8)),
   };
   output.push(notIncluded);
   return output;
@@ -187,35 +187,35 @@ for (let i = 0; i < 100; i += 1) {
     owner: names[i],
     ownerPicture_url: `'https://s3-us-west-1.amazonaws.com/napbnb/owner'${i}.jpg`,
     propertyType: arbitrarySentence(houseType, 1),
-    title: arbitrarySentence(loremIpsum, randomInterger(3, 8)),
-    score: randomInterger(50, 100),
+    title: arbitrarySentence(loremIpsum, randomInteger(3, 8)),
+    score: randomInteger(50, 100),
     location: cities[i],
-    numberOfGuests: randomInterger(2, 12),
-    numberOfRooms: randomInterger(1, 6),
-    numberBeds: randomInterger(1, 6),
-    numberOfBaths: randomInterger(2, 4),
-    numberOfViews: randomInterger(5, 400),
+    numberOfGuests: randomInteger(2, 12),
+    numberOfRooms: randomInteger(1, 6),
+    numberBeds: randomInteger(1, 6),
+    numberOfBaths: randomInteger(2, 4),
+    numberOfViews: randomInteger(5, 400),
     homeHighlights: highlightsArray(),
-    descriptionSummary: arbitrarySentence(loremIpsum, randomInterger(25, 50), true),
+    descriptionSummary: arbitrarySentence(loremIpsum, randomInteger(25, 50), true),
     description: descriptionArray(),
     amenities: amenitiesArray(),
     sleepingArrangments: null,
-    smoking: randomInterger(1, 100) < 25,
-    petSuitable: randomInterger(1, 100) < 25,
-    partiesOrEvents: randomInterger(1, 100) < 20,
-    noSafeForChildrenUnder: randomInterger(1, 12),
-    checkInStartTime: randomInterger(3, 6),
-    checkInEndTime: randomInterger(9, 11),
+    smoking: randomInteger(1, 100) < 25,
+    petSuitable: randomInteger(1, 100) < 25,
+    partiesOrEvents: randomInteger(1, 100) < 20,
+    noSafeForChildrenUnder: randomInteger(1, 12),
+    checkInStartTime: randomInteger(3, 6),
+    checkInEndTime: randomInteger(9, 11),
     checkOutTime: 11,
-    selfCheckInWithLockBox: randomInterger(1, 100) < 75,
-    aules: arbitrarySentence(loremIpsum, randomInterger(8, 300), true),
-    rulesToAcknoledge: arbitrarySentence(loremIpsum, randomInterger(6, 36), true),
-    cancellationType: randomInterger(1, 5),
-    cancelationSummary: arbitrarySentence(loremIpsum, randomInterger(20, 60), true),
-    nightsOfStayVary: randomInterger(1, 100) < 75,
-    nightsOfMinimumStay: randomInterger(2, 3),
+    selfCheckInWithLockBox: randomInteger(1, 100) < 75,
+    aules: arbitrarySentence(loremIpsum, randomInteger(8, 300), true),
+    rulesToAcknoledge: arbitrarySentence(loremIpsum, randomInteger(6, 36), true),
+    cancellationType: randomInteger(1, 5),
+    cancelationSummary: arbitrarySentence(loremIpsum, randomInteger(20, 60), true),
+    nightsOfStayVary: randomInteger(1, 100) < 75,
+    nightsOfMinimumStay: randomInteger(2, 3),
     nightsOfMinimumStayForDateRange: specialStayRangeArray(),
-    daysFromLastUpdate: randomInterger(5, 260),
+    daysFromLastUpdate: randomInteger(5, 260),
   };
   homeData.push(homeInstance);
 }
