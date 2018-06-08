@@ -1,28 +1,32 @@
 import React from 'react';
+import HighlightFeedBack from './HighlightFeedBack';
 
-const Highlights = (props) => {
-  const highlightsContent = props.data.map((item) => 
-    <div className="highlight" >
-      <div>
-        <div className="highlightTitle" >{item.title}</div>
-        <div className="highlightText" >&#183;{` ${item.comment}`}</div>
-      </div>
-      <div className="highlightFeedBack" >
-        <div className="highlightFeedback_1" >Helpful</div>
-        <img className="highlightThumbsUp" alt="thumbs up" src="https://s3-us-west-1.amazonaws.com/napbnb/icon7.png" />
-        <div className="dot" >&#183;</div>
-        <div className="highlightFeedback_2" >Not helpful</div>  
-      </div>
-    </div>);
+class Highlights extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-  return (
-    <hgroup id="highlightsBoard" className="lightBorder" >
-      <div className="title_0 " >HOME HIGHLIGHTS</div>
-      <div className="allHighlights" >
-        {highlightsContent}
+  render() {
+    const highlightsContent = this.props.data.map((item, i) =>
+      <div key={i} className="highlight" >
+        <div>
+          <div className="highlightTitle" >{item.title}</div>
+          <div className="highlightText" >&#183;{` ${item.comment}`}</div>
+        </div>
+        <HighlightFeedBack />
       </div>
-    </hgroup>
-  );
-};
+    );
+
+    return (
+      <hgroup id="highlightsBoard" className="lightBorder" >
+        <div className="title_0 " >HOME HIGHLIGHTS</div>
+        <div className="allHighlights" >
+          {highlightsContent}
+        </div>
+      </hgroup>
+    );
+  }
+}
 
 export default Highlights;
