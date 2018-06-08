@@ -10,8 +10,12 @@ class App extends React.Component {
     this.state = {};
   }
 
-  componentDidMount(id) {
-    axios.get(`http://127.0.0.1:3001/homes/${1058}`)
+  componentDidMount() {
+    this.getHomeData(Math.floor(Math.random() * (100)) + 1000);
+  }
+
+  getHomeData(id) {
+    axios.get(`http://127.0.0.1:3001/homes/${id}`)
       .then((response) => {
         const homeData = response.data[0];
         this.setState({ home: homeData });
@@ -26,7 +30,7 @@ class App extends React.Component {
       return (
         <div>
           <div id="board">
-            <div id="propertyTypeTitle">{this.state.home.propertyType}</div>
+            <div className="propertyTypeTitle">{this.state.home.propertyType}</div>
             <Header data={this.state.home} />
             <Accomodations data={this.state.home} />
           </div>

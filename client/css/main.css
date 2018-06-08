@@ -1,45 +1,45 @@
-body {
+
+#board {
   font-family: Futura;
   color: #434344;
-}
-#board {
- position: relative;
- margin : 0 0 1em;
- max-width: 600px;
+  position: relative;
+  margin : 0 0 1em;
+  max-width: 600px;
 }
 
 /*=========HEADER=======*/
+
+
+.propertyTypeTitle {
+  font-size: 8.5px;
+  font-weight: 600; 
+}
 
 #listingHeader {
   display: flex;
   justify-content: space-between;
 }
 
-#propertyTypeTitle {
-  font-size: 8.5px;
-  font-weight: 600; 
-}
-
-#headerPropertyInfo {
+.headerPropertyInfo {
 display: flex;
 flex-direction: column; 
 justify-content: space-around;
 }
 
-#listingTitle {
+.listingTitle {
   font-size: 32px;
   font-weight: 54;
   line-height: 32px;
   min-width: 340px;
 }
 
-#listingLocation {
+.listingLocation {
   font-size: 14px;
   font-weight: 200;
   color: #7a7c82;
 }
 
-#headerOwnerInfo {
+.eaderOwnerInfo {
   float: right;
   width: 80px;
   display: flex;
@@ -47,7 +47,7 @@ justify-content: space-around;
   justify-content: flex-end;
 }
 
-#ownerImage {
+.ownerImage {
   width: 60px;
   height: 60px;
   object-fit: cover;
@@ -55,7 +55,7 @@ justify-content: space-around;
   margin: 6px;
 }
 
-#ownerName {
+.ownerName {
   font-size: 11px;
   font-weight: 400;
   color: #7a7c82;
@@ -76,25 +76,18 @@ justify-content: space-around;
   min-width: 400px;
 }
 
-#userIcon {
+.accomodationIcon {
   height: 16px;
-  margin-right: 5px;
+  margin-right: 7px;
+  margin-left: 18px
 }
 
-#roomIcon {
-  height: 16px;
-  margin-left: 18px;
+#userIcon {
   margin-right: 5px;
+  margin-left: 0px;
 }
 
 #bedIcon {
   height: 18px;
-  margin-left: 18px;
-  margin-right: 7px;
 }
 
-#bathIcon {
-  height: 16px;
-  margin-left: 18px;
-  margin-right: 7px;
-}
