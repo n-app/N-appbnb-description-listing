@@ -2,9 +2,26 @@
 #board {
   font-family: Futura;
   color: #434344;
+  font-size: 12px;
+  font-weight: 200;
   position: relative;
   margin : 0 0 1em;
   max-width: 600px;
+}
+
+/*======Titles======*/
+
+.smallTitle {
+  font-size: 14px;
+  font-weight: 500; 
+}
+
+/*=========Light borders=======*/
+
+.lightBorder {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d9dbdd;
 }
 
 /*=========HEADER=======*/
@@ -39,7 +56,7 @@ justify-content: space-around;
   color: #7a7c82;
 }
 
-.eaderOwnerInfo {
+.headerOwnerInfo {
   float: right;
   width: 80px;
   display: flex;
@@ -90,5 +107,38 @@ justify-content: space-around;
 #bedIcon {
   height: 18px;
 }
+
+/*=========ViewsAlert=======*/
+
+#viewsAlert {
+  height: 70px;
+  border-style: solid;
+  border-width: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.viewsAlertText {
+  max-width: 300px;
+  height: 40px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.viewsAlertImage {
+  float: right;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.lightBulbImage {
+  width: 40px;
+}
+
 
 
