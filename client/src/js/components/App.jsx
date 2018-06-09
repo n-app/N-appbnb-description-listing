@@ -6,13 +6,18 @@ import ViewsAlert from './ViewsAlert';
 import Highlights from './HomeHighlights';
 import HomeDescription from './HomeDescription';
 import Amenities from './Amenities';
+import AllAmenities from './AllAmenities';
 
 import '../../../css/main.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+
+    this.showAmenities = this.showAmenities.bind(this);
+    this.state = {
+      showAmenities: false,
+    };
   }
 
   componentDidMount() {
@@ -28,6 +33,10 @@ class App extends React.Component {
       .catch((err) => {
         console.error('error at clientfetching', err);
       });
+  }
+
+  showAmenities() {
+    this.setState({ showAmenities: !this.state.showAmenities });
   }
 
   render() {
@@ -46,6 +55,14 @@ class App extends React.Component {
               <div className="button_1" >Contact host</div>
             </div>
             <Amenities data={this.state.home.amenities} />
+            <div className="button_1">
+              <div className="buttonHover_1">
+                <div onClick={this.showAmenities} >{`Show all ${41} amenities`}</div>
+              </div>
+            </div>
+            <div id="amenityModal" class="modal">
+              <AllAmenities data={this.state.home.amenities} />
+            </div>
           </div>
         </div>
       );

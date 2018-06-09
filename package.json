@@ -23,7 +23,6 @@
     "mongoose": "^5.1.4",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "react-transition-group": "^1.2.1",
     "request": "^2.87.0"
   },
   "homepage": "https://github.com/n-app/N-appbnb-description-listing#readme",
