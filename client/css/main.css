@@ -1,12 +1,72 @@
 
 #board {
-  font-family: Futura;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   color: #434344;
   font-size: 12px;
   font-weight: 200;
   position: relative;
   margin : 0 0 1em;
   max-width: 600px;
+  min-width: 400px;
+}
+
+/*=========Arrow======*/
+
+.arrow {
+  text-decoration: none;
+  margin-left: 7px;
+}
+
+/*=========Borders=======*/
+
+.lightBorder {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DBDBDB;
+  border-radius: 2.5px;
+}
+
+/*===========Buttons========*/
+
+.button_1 {
+  font-weight: 400; 
+  font-size: 15px;
+  color: #008489;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.buttonHover_1 div:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+/*=========Icons=======*/
+
+.icon_1 {
+  height: 16px;
+}
+
+/*=========Paragraphs=======*/
+
+.paragraph {
+  position: relative;
+  font-weight: 300; 
+  font-size: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 22px;
+  letter-spacing: normal;
+  
+}
+
+/*=======pointer=====*/
+
+.pointer {
+  cursor: pointer;
 }
 
 /*======Titles======*/
@@ -14,6 +74,7 @@
 .title_0 {
   font-size: 9px;
   font-weight: 600; 
+  color: #767676;
 }
 
 .title_1 {
@@ -26,20 +87,13 @@
   font-weight: 500; 
 }
 
-/*=========icons=======*/
+/*=========underline========*/
 
-.icon_1 {
-  height: 16px;
+.underline div:hover {
+  text-decoration: underline;
 }
 
 
-/*=========Light borders=======*/
-
-.lightBorder {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #d9dbdd;
-}
 
 /*=========HEADER=======*/
 
@@ -56,7 +110,7 @@ justify-content: space-around;
 
 .listingTitle {
   font-size: 32px;
-  font-weight: 54;
+  font-weight: 600;
   line-height: 32px;
   min-width: 340px;
 }
@@ -91,7 +145,7 @@ justify-content: space-around;
   justify-content: center;
 }
 
-/*=========accommodation=======*/
+/*=========Accommodation=======*/
 
 #accomodations {
   font-size: 12px;
@@ -156,6 +210,7 @@ justify-content: space-around;
 #highlightsBoard {
   margin-top: 25px;
   padding: 15px;
+  margin-bottom: 25px;
 }
 
 .allHighlights {
@@ -165,10 +220,6 @@ justify-content: space-around;
 .action_1 div:hover {
   color: green;
 }
-
-/*.highlight {
-  display: flex;
-  /*flex-direction: row;*/
 
 .highlightTitle {
   float: left;
@@ -186,8 +237,10 @@ justify-content: space-around;
  display: flex;
  flex-direction: row;
  align-items: center;
- margin-top: 10px;
- margin-bottom:  20px; 
+ margin-top: 8px;
+ margin-bottom:  10px; 
+ color: #b7b7b7;
+
 }
 
 .highlightFeedback_1 {
@@ -209,7 +262,7 @@ justify-content: space-around;
 }
 
 .highlightFeedBack div:hover {
-  color: #19b58b;
+  color: #008489;
 }
 
 .feedbackResult {
@@ -218,11 +271,29 @@ justify-content: space-around;
  align-items: center;
  margin-top: 10px;
  margin-bottom:  20px; 
+ color: #484848;
 }
 
-.thanksForFeedback {
-  
+/*===========Description============*/
+
+.descriptionBoard {
+  margin-bottom: 15px;
 }
+
+/*=============Contact host===========*/
+
+.contactButton {
+  margin-top: 15px;
+  margin bottom: 15px;
+}
+
+/*===========Amenities Board==========*/
+
+
+
+
+
+
 
 
 

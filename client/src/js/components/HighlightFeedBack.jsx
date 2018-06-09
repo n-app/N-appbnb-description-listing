@@ -22,14 +22,18 @@ class HighlightFeedBack extends React.Component {
     const feedbackGiven = this.state.helpfulFeedback === null;
     const option = feedbackGiven ? (
       <div className="highlightFeedBack" >
-        <div onClick={this.handletHelpfullFeedback} className="highlightFeedback_1" >Helpful</div>
+        <div className="pointer">
+          <div onClick={this.handletHelpfullFeedback} className="highlightFeedback_1" >Helpful</div>
+        </div>
         <img className="highlightThumbsUp" alt="thumbs up" src="https://s3-us-west-1.amazonaws.com/napbnb/icon7.png" />
         <div className="dot" >&#183;</div>
-        <div onClick={this.handleNotHelpfullFeedback} className="highlightFeedback_2" >Not Helpful</div>  
+        <div className="pointer">
+          <div className="pointer" onClick={this.handleNotHelpfullFeedback} className="highlightFeedback_2" >Not Helpful</div>  
+        </div>
       </div>
     ) : (
       <div className="feedbackResult" >
-        <div className="thanksForFeedback" >Thank you for your feedback</div>
+        <div className="thanksForFeedback" >Thank you for your feedback.</div>
       </div>
     );
 

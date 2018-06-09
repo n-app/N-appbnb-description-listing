@@ -4,6 +4,9 @@ import Header from './Header';
 import Accomodations from './Accomodations';
 import ViewsAlert from './ViewsAlert';
 import Highlights from './HomeHighlights';
+import HomeDescription from './HomeDescription';
+import Amenities from './Amenities';
+
 import '../../../css/main.css';
 
 class App extends React.Component {
@@ -37,6 +40,12 @@ class App extends React.Component {
             <Accomodations data={this.state.home} />
             <ViewsAlert data={this.state.home.numberOfViews} />
             <Highlights data={this.state.home.homeHighlights} />
+            <p className="paragraph">{this.state.home.descriptionSummary}</p>
+            <HomeDescription data={this.state.home.description} />
+            <div className="buttonHover_1" >
+              <div className="button_1" >Contact host</div>
+            </div>
+            <Amenities data={this.state.home.amenities} />
           </div>
         </div>
       );
