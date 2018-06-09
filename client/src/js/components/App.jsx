@@ -1,22 +1,77 @@
 import React from 'react';
+import axios from 'axios';
+import Header from './Header';
+import Accomodations from './Accomodations';
+import ViewsAlert from './ViewsAlert';
+import Highlights from './HomeHighlights';
+import HomeDescription from './HomeDescription';
+import Amenities from './Amenities';
+import AllAmenities from './AllAmenities';
+
+import '../../../css/main.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
 
+    this.showAmenities = this.showAmenities.bind(this);
+    this.state = {
+      showAmenities: false,
     };
   }
 
+  componentDidMount() {
+    this.getHomeData(Math.floor(Math.random() * (100)) + 1000);
+  }
+
+  getHomeData(id) {
+    axios.get(`http://127.0.0.1:3001/homes/${id}`)
+      .then((response) => {
+        const homeData = response.data[0];
+        this.setState({ home: homeData });
+      })
+      .catch((err) => {
+        console.error('error at clientfetching', err);
+      });
+  }
+
+  showAmenities() {
+    this.setState({ showAmenities: !this.state.showAmenities });
+  }
+
   render() {
-    return (
-      <div>
+    if (this.state.home) {
+      return (
         <div>
-          <div>HELLO WORLD!!!!!!!!!!!!!!!</div>
+          <div id="board">
+            <div className="title_0 " >{this.state.home.propertyType}</div>
+            <Header data={this.state.home} />
+            <Accomodations data={this.state.home} />
+            <ViewsAlert data={this.state.home.numberOfViews} />
+            <Highlights data={this.state.home.homeHighlights} />
+            <p className="paragraph">{this.state.home.descriptionSummary}</p>
+            <HomeDescription data={this.state.home.description} />
+            <div className="buttonHover_1" >
+              <div className="button_1" >Contact host</div>
+            </div>
+            <Amenities data={this.state.home.amenities} />
+            <div className="button_1">
+              <div className="buttonHover_1">
+                <div onClick={this.showAmenities} >{`Show all ${41} amenities`}</div>
+              </div>
+            </div>
+            <div id="amenityModal" class="modal">
+              <AllAmenities data={this.state.home.amenities} />
+            </div>
+          </div>
         </div>
-      </div>
+      );
+    }
+    return (
+      <div>Loading...</div>
     );
   }
 }
 
 export default App;
+
