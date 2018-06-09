@@ -7,6 +7,7 @@ import Highlights from './HomeHighlights';
 import HomeDescription from './HomeDescription';
 import Amenities from './Amenities';
 import AllAmenities from './AllAmenities';
+import AmenitiesModal from './AmenitiesModal';
 
 import '../../../css/main.css';
 
@@ -17,6 +18,7 @@ class App extends React.Component {
     this.showAmenities = this.showAmenities.bind(this);
     this.state = {
       showAmenities: false,
+      showAmenitiesModal:false,
     };
   }
 
@@ -55,14 +57,6 @@ class App extends React.Component {
               <div className="button_1" >Contact host</div>
             </div>
             <Amenities data={this.state.home.amenities} />
-            <div className="button_1">
-              <div className="buttonHover_1">
-                <div onClick={this.showAmenities} >{`Show all ${41} amenities`}</div>
-              </div>
-            </div>
-            <div id="amenityModal" class="modal">
-              <AllAmenities data={this.state.home.amenities} />
-            </div>
           </div>
         </div>
       );

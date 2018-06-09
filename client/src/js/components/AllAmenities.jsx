@@ -14,9 +14,7 @@ class AllAmenities extends React.Component {
   }
 
   render() {
-    console.log(this.props.data);
     const allAmenitiesList = this.props.data.map((category, i) => {
-      
       if (category.contents.length === 0) {
         return null;
       }
