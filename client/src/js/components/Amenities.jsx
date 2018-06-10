@@ -17,6 +17,7 @@ class Amenities extends React.Component {
   }
 
   render() {
+  
     let amenitiesListed = 0;
     const amenitiesList = this.props.data.map((item, i) => {
       if (item.contents[0] && amenitiesListed < 6) {
@@ -32,7 +33,7 @@ class Amenities extends React.Component {
     });
 
     return (
-      <hgroup className="something" >
+      <hgroup className="amenityComponent" >
         <div>
           <div>
             <div className="title_1" >Amenities</div>
