@@ -8,7 +8,6 @@ import HomeDescription from './HomeDescription';
 import Amenities from './Amenities';
 import HouseRules from './HouseRules';
 import Cancellations from './Cancellations';
-
 import '../../../css/main.css';
 
 class App extends React.Component {
@@ -38,6 +37,7 @@ class App extends React.Component {
       return (
         <div>
           <div id="board">
+
             <div className="title_0 " >{this.state.home.propertyType}</div>
             <Header data={this.state.home} />
             <Accomodations data={this.state.home} />
