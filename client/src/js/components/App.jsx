@@ -2,22 +2,18 @@ import React from 'react';
 import axios from 'axios';
 import Header from './Header';
 import Accomodations from './Accomodations';
-
 import ViewsAlert from './ViewsAlert';
 import Highlights from './HomeHighlights';
 import HomeDescription from './HomeDescription';
 import Amenities from './Amenities';
-import AllAmenities from './AllAmenities';
+import HouseRules from './HouseRules';
+import Cancellations from './Cancellations';
 import '../../../css/main.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-
-    this.showAmenities = this.showAmenities.bind(this);
-    this.state = {
-      showAmenities: false,
-    };
+    this.state = {};
   }
 
   componentDidMount() {
@@ -35,11 +31,8 @@ class App extends React.Component {
       });
   }
 
-  showAmenities() {
-    this.setState({ showAmenities: !this.state.showAmenities });
-  }
-
   render() {
+    console.log(this.state.home);
     if (this.state.home) {
       return (
         <div>
@@ -52,18 +45,14 @@ class App extends React.Component {
             <Highlights data={this.state.home.homeHighlights} />
             <p className="paragraph">{this.state.home.descriptionSummary}</p>
             <HomeDescription data={this.state.home.description} />
-            <div className="buttonHover_1" >
-              <div className="button_1" >Contact host</div>
-            </div>
-            <Amenities data={this.state.home.amenities} />
-            <div className="button_1">
-              <div className="buttonHover_1">
-                <div onClick={this.showAmenities} >{`Show all ${41} amenities`}</div>
+            <div id="contactHost">
+              <div className="buttonHover_1" >
+                <div className="button_1" >Contact host</div>
               </div>
             </div>
-            <div id="amenityModal" class="modal">
-              <AllAmenities data={this.state.home.amenities} />
-            </div>
+            <Amenities data={this.state.home.amenities} />
+            <HouseRules data={this.state.home} />
+            <Cancellations data={this.state.home} />
           </div>
         </div>
       );
