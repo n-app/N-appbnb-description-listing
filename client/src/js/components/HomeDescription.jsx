@@ -19,8 +19,8 @@ class HomeDescription extends React.Component {
   }
 
   render() {
-    const descriptionContent = this.props.data.map((item) => {
-      <div className="descriptionSection">
+    const descriptionContent = this.props.data.map((item, i) => {
+      <div className="descriptionSection" key={i}>
         <div className="descriptionTitle" className="title_1" >{item.title}</div>
         <div className="descriptionContent" className="paragraph">{item.comment}</div>
       </div>

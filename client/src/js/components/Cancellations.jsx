@@ -16,7 +16,6 @@ class Cancellations extends React.Component {
 
   showCancellationDescription() {
     this.setState({ showCancellation: true });
-    console.log('cliclcilciclcick')
   }
 
   render() {
@@ -25,9 +24,9 @@ class Cancellations extends React.Component {
     const previewText = this.props.data.cancelationSummary.slice(0, 130) + '...';
 
     const cancellationText = this.state.showCancellation ? (
-      <div className="marginTop" >
+      <div className="marginTop">
         <div>
-          <div className="paragraph" >
+          <div className="paragraph">
             {this.props.data.cancelationSummary}
           </div>
         </div>
@@ -35,12 +34,12 @@ class Cancellations extends React.Component {
     ) : (
       <div>
         <div className="shortBorder" />
-        <div className="rulesDisplay" >
-          <div className="rulesDescription" className="paragraph" >
+        <div className="rulesDisplay">
+          <div className="rulesDescription" className="paragraph">
             {previewText}
           </div>
           <div className="button_1">
-            <div className="buttonHover_1" >
+            <div className="buttonHover_1">
               <div onClick={this.showCancellationDescription} >Read more</div>
             </div>
           </div>
@@ -50,20 +49,20 @@ class Cancellations extends React.Component {
 
     return (
       <div>
-        <div className="" >
-          <div className="marginTop" >
-            <div className="title_1" >Cancellations</div>
+        <div className="">
+          <div className="marginTop">
+            <div className="title_1">Cancellations</div>
           </div>
-          <div className="marginTop" >
-            <div className="paragraph" >{cancellationType}</div>
+          <div className="marginTop">
+            <div className="paragraph">{cancellationType}</div>
           </div>
-          <div className="marginTop" >
+          <div className="marginTop">
             {cancellationText}
           </div>
         </div>
-        <div className="button_1" >
-          <div className="buttonHover_1" >
-            <div className="marginTop" >Get details</div>
+        <div className="button_1">
+          <div className="buttonHover_1">
+            <div className="marginTop">Get details</div>
           </div>
         </div>
       </div>
