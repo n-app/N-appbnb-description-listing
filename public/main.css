@@ -1,12 +1,17 @@
+p {
+margin-top: .5em;
+margin-bottom: .5em;
+
+}
 
 #board {
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   color: #434344;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 200;
   position: relative;
   margin : 0 0 1em;
-  max-width: 600px;
+  max-width: 600px; 
   min-width: 400px;
 }
 
@@ -28,17 +33,41 @@
 
 /*===========Buttons========*/
 
+button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    padding: 0rem;
+    margin: 0;
+    text-decoration: none;
+    background: none;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;;
+    font-size: 18px;
+    font-weight: 400;
+    color: #008489;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 .button_1 {
   font-weight: 400; 
-  font-size: 15px;
+  font-size: 18px;
   color: #008489;
   display: flex;
   flex-direction: row;
   align-items: center;
-  
+  text-decoration: none;
 }
 
-.buttonHover_1 div:hover {
+.button_1:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -51,25 +80,34 @@
 }
 
 .icon_2 {
-  height: 20px;
+  height: 25px;
   margin-right: 10px
 }
+
+.icon_3 {
+  height: 25px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
 /*========margin=========*/
 
 .marginTop {
   margin-top: 30px;
 }
 
+.marginTop_1 {
+  margin-top: 20px;
+}
 
 /*=========Paragraphs=======*/
 
 .paragraph {
-  /*position: relative;*/
   font-weight: 300; 
-  font-size: 15px;
+  font-size: 18px;
   margin-top: 15px;
   margin-bottom: 15px;
-  line-height: 22px;
+  line-height: 24px;
   letter-spacing: normal;
 }
 
@@ -82,28 +120,34 @@
 /*======Titles======*/
 
 .title_0 {
-  font-size: 9px;
+  font-size: 14px;
   font-weight: 600; 
   color: #767676;
 }
 
 .title_1 {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500; 
 }
 
 .title_2 {
+  font-size: 40px;
+  font-weight: 500; 
+  color: orange;
+}
+
+.title_4 {
   font-size: 16px;
   font-weight: 500; 
 }
 
 .title_10 {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 600; 
 }
 
 .title_11 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   margin-top: 40px;
 }
@@ -113,8 +157,6 @@
 .underline div:hover {
   text-decoration: underline;
 }
-
-
 
 /*=========HEADER=======*/
 
@@ -130,14 +172,17 @@ justify-content: space-around;
 }
 
 .listingTitle {
-  font-size: 32px;
+  margin-top: 5px;
+  margin-bottom: 2px;
+  font-size: 38px;
   font-weight: 600;
   line-height: 32px;
   min-width: 340px;
 }
 
 .listingLocation {
-  font-size: 14px;
+  margin-top: 5px;
+  font-size: 18px;
   font-weight: 200;
   color: #7a7c82;
 }
@@ -159,7 +204,7 @@ justify-content: space-around;
 }
 
 .ownerName {
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 400;
   color: #7a7c82;
   display: flex;
@@ -169,7 +214,7 @@ justify-content: space-around;
 /*=========Accommodation=======*/
 
 #accomodations {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 100;
   display: flex;
   flex-direction: row;
@@ -180,24 +225,24 @@ justify-content: space-around;
 }
 
 .accomodationIcon {
-  height: 16px;
+  height: 18px;
   margin-right: 7px;
   margin-left: 18px
 }
 
 #userIcon {
-  margin-right: 5px;
+  margin-right: 7px;
   margin-left: 0px;
 }
 
 #bedIcon {
-  height: 18px;
+  height: 20px;
 }
 
 /*=========ViewsAlert=======*/
 
 #viewsAlert {
-  height: 70px;
+  height: 85px;
   border-style: solid;
   border-width: 1px;
   display: flex;
@@ -206,7 +251,7 @@ justify-content: space-around;
 }
 
 .viewsAlertText {
-  max-width: 300px;
+  max-width: 350px;
   height: 40px;
   margin-left: 20px;
   display: flex;
@@ -224,6 +269,10 @@ justify-content: space-around;
 
 .lightBulbImage {
   width: 40px;
+}
+
+.houseViews {
+  font-size: 15px;
 }
 
 /*=========Highlights=======*/
@@ -245,13 +294,13 @@ justify-content: space-around;
 .highlightTitle {
   float: left;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   margin-right: 4px
 }
 .highlightText {
   position: relative;
   font-weight: 300; 
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .highlightFeedBack {
@@ -273,9 +322,20 @@ justify-content: space-around;
 }
 
 .highlightThumbsUp { 
-  width: 14px;
+  width: 16px;
   margin-left: 3px;
   margin-right: 3px;
+}
+
+.icon_thumb {
+  width: 14px;
+  height: 16px;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: #008489;
+}
+.icon_thumb:hover {
+  color: #008489; 
 }
 
 .dot {
@@ -299,6 +359,12 @@ justify-content: space-around;
 
 .descriptionBoard {
   margin-bottom: 25px;
+}
+
+.descriptionReadButton {
+  display: flex;
+  flex-direction: row;
+  color: #008489;
 }
 
 /*=============Contact host===========*/
@@ -325,7 +391,6 @@ margin-top: 15px;
   border-bottom-width: 1px;
 }
 
-
 #amenitiesBoard {
   margin-top: 15px;
   padding-top: 15px;
@@ -344,7 +409,7 @@ margin-top: 15px;
 
 .amenityItem {
   height: 36px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 200; 
   display: flex;
   flex-direction: row;
@@ -360,13 +425,11 @@ margin-top: 15px;
   padding: 20px;
   max-width: 568px;
   min-width: 500px;
-
 }
 
 .amenityTable{
   margin-top: 18px;
 }
-
 
 .itemsSection{
   margin-top: 15px;
@@ -375,7 +438,7 @@ margin-top: 15px;
 }
 
 .anAmenity{
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: normal;
   border-bottom-style: solid;
   border-width: 1px;
@@ -400,7 +463,6 @@ margin-top: 15px;
   min-width: 500px;
   margin-top: 50px;
   padding: 30px;
-
 }
 
 .backdropStyle {
@@ -418,15 +480,18 @@ margin-top: 15px;
 
 
 .xButton {
-  width: 20px;
+  padding: 5px;
+  width: 25px;
   margin-left: 20px;
   border-radius: 100%;
 }
 
-.xButton div:hover {
- border: 1px solid;
-    padding: 10px;
-    box-shadow: 5px 10px red;
+.xButton:hover {
+ 
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px gray;
+ box-shadow: 2px gray;
+  overflow: visible;
 }
 
 /*===============Rules============*/
@@ -440,8 +505,8 @@ margin-top: 15px;
   margin-top: 15px;
   margin-bottom: 20px;
   font-weight: 300; 
-  font-size: 14px;
-  line-height: 27px;
+  font-size: 17px;
+  line-height: 29px;
   letter-spacing: normal;
 }
 
@@ -450,12 +515,7 @@ margin-top: 15px;
 }
 
 .rulesDisplay {
-  margin-top: 30px;
-
-/*
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #DBDBDB;*/
+  margin-top: 0px;
 }
 
 .shortBorder {
@@ -463,9 +523,107 @@ margin-top: 15px;
   border-top-width: 1px;
   border-top-color: #DBDBDB;
   width: 80px;
-
 }
 
-/*==========Rules===========*/
+/*==========Cancellations===========*/
 
+
+.cancellationShortParagraph {
+  font-weight: 300; 
+  font-size: 18px;
+  margin-top: 0px;
+  line-height: 24px;
+  letter-spacing: normal;
+}
+
+.cancellationParagraph {
+  font-weight: 300; 
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  line-height: 24px;
+  letter-spacing: normal;
+}
+
+.readMoreButton {
+  margin-bottom: 20px;
+   font-weight: 400; 
+  font-size: 18px;
+  color: #008489;
+}
+
+.readMoreButton:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/*=======Availability==========*/
+
+.availabilityTable {
+  font-weight: 300; 
+  font-size: 17px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 20px;
+  letter-spacing: normal;
+}
+
+.strong {
+  font-weight: 500; 
+  font-size: 17px;
+}
+
+/*=============Sleeping Arrangements=============*/
+
+.SleepingArrangementsSection {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #DBDBDB;
+  padding-bottom: 4px;
+}
+
+.SleepingArrangementsTable {
+  display: flex;
+  flex-direction: row;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  overflow: scroll;
+}
+
+.roomArrangementBorder {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+.aRoom {
+  width: 135px;
+  height: 125px;
+  padding: 24px;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #DBDBDB;
+  margin-right: 17px;
+}
+
+.arrangementImages {
+  height: 50px;
+}
+
+.roomArrangementText {
+  font-weight: 300; 
+  font-size: 16px;
+  margin-top: 2px;
+  margin-bottom: 15px;
+  letter-spacing: normal;
+}
+
+.roomArrangemenBedTitles{
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500; 
+}
 

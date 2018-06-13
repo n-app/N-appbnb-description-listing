@@ -8,6 +8,8 @@ import HomeDescription from './HomeDescription';
 import Amenities from './Amenities';
 import HouseRules from './HouseRules';
 import Cancellations from './Cancellations';
+import Availability from './Availability';
+import SleepingArrangements from './SleepingArrangements';
 import '../../../css/main.css';
 
 class App extends React.Component {
@@ -21,7 +23,7 @@ class App extends React.Component {
   }
 
   getHomeData(id) {
-    axios.get(`http://127.0.0.1:3001/homes/${id}`)
+    axios.get(`http://127.0.0.1:3001/rooms/${id}`)
       .then((response) => {
         const homeData = response.data[0];
         this.setState({ home: homeData });
@@ -32,17 +34,15 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.home);
     if (this.state.home) {
       return (
         <div>
           <div id="board">
-
             <div className="title_0 " >{this.state.home.propertyType}</div>
             <Header data={this.state.home} />
             <Accomodations data={this.state.home} />
             <ViewsAlert data={this.state.home.numberOfViews} />
-            <Highlights data={this.state.home.homeHighlights} />
+            <Highlights data={this.state.home.highlights} />
             <p className="paragraph">{this.state.home.descriptionSummary}</p>
             <HomeDescription data={this.state.home.description} />
             <div id="contactHost">
@@ -51,17 +51,18 @@ class App extends React.Component {
               </div>
             </div>
             <Amenities data={this.state.home.amenities} />
+            <SleepingArrangements data={this.state.home} />
             <HouseRules data={this.state.home} />
             <Cancellations data={this.state.home} />
+            <Availability data={this.state.home} />
           </div>
         </div>
       );
     }
     return (
-      <div>Loading...</div>
+      <div>{JSON.stringify(this.state.home)}</div>
     );
   }
 }
 
 export default App;
-

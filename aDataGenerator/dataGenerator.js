@@ -179,10 +179,10 @@ const amenitiesArray = () => {
   return output;
 };
 
-const homeData = [];
+const roomData = [];
 
 for (let i = 0; i < 100; i += 1) {
-  const homeInstance = {
+  const roomInstance = {
     id: i + 1000,
     owner: names[i],
     ownerPicture_Url: `https://s3-us-west-1.amazonaws.com/napbnb/owner${i}.jpg`,
@@ -195,7 +195,7 @@ for (let i = 0; i < 100; i += 1) {
     numberBeds: randomInteger(1, 6),
     numberOfBaths: randomInteger(2, 4),
     numberOfViews: randomInteger(5, 400),
-    homeHighlights: highlightsArray(),
+    highlights: highlightsArray(),
     descriptionSummary: arbitrarySentence(loremIpsum, randomInteger(25, 50), true),
     description: descriptionArray(),
     amenities: amenitiesArray(),
@@ -208,18 +208,18 @@ for (let i = 0; i < 100; i += 1) {
     checkInEndTime: randomInteger(9, 11),
     checkOutTime: 11,
     selfCheckInWithLockBox: randomInteger(1, 100) < 75,
-    allRules: arbitrarySentence(loremIpsum, randomInteger(8, 300), true),
+    rules: arbitrarySentence(loremIpsum, randomInteger(8, 300), true),
     rulesToAcknowledge: arbitrarySentence(loremIpsum, randomInteger(6, 36), true),
     cancellationType: randomInteger(1, 5),
     cancellationSummary: arbitrarySentence(loremIpsum, randomInteger(20, 60), true),
     nightsOfStayVary: randomInteger(1, 100) < 75,
     nightsOfMinimumStay: randomInteger(2, 3),
     nightsOfMinimumStayForDateRange: specialStayRangeArray(),
-    daysFromLastUpdate: randomInteger(5, 260),
+    daysFromLastUpdate: randomInteger(0, 120),
   };
-  homeData.push(homeInstance);
+  roomData.push(roomInstance);
 }
 
-//db.save(homeData);
+//db.save(roomData);
 
-module.exports.homeData = homeData;
+module.exports.roomData = roomData;
