@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
+const dataGen = require('./../aDataGenerator/dataGenerator');
 
-mongoose.connect('mongodb://localhost/NapbnbDataBase');
+mongoose.connect('mongodb://localhost/NappbnbDB');
 
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'mongoose connection error:'));
 db.once('open', () => console.log('mongoose - we\'re connected'));
 
-const homeSchema = mongoose.Schema({
+const roomSchema = mongoose.Schema({
   id: { type: Number, unique: true },
   owner: String,
-  ownerPicture_url: { type: String, unique: true },
+  ownerPicture_Url: { type: String, unique: true },
   propertyType: String,
   title: String,
   score: Number,
@@ -20,7 +21,7 @@ const homeSchema = mongoose.Schema({
   numberBeds: Number,
   numberOfBaths: Number,
   numberOfViews: Number,
-  homeHighlights: {},
+  highlights: {},
   descriptionSummary: String,
   description: {},
   amenities: {},
@@ -34,37 +35,39 @@ const homeSchema = mongoose.Schema({
   checkOutTime: Number,
   selfCheckInWithLockBox: Boolean,
   rules: String,
-  rulesToAcknoledge: String,
+  rulesToAcknowledge: String,
   cancellationType: Number,
-  cancelationSummary: String,
+  cancellationSummary: String,
   nightsOfStayVary: Boolean,
   nightsOfMinimumStay: Number,
   nightsOfMinimumStayForDateRange: {},
   daysFromLastUpdate: Number,
 });
 
-const Home = mongoose.model('Home', homeSchema);
+const Room = mongoose.model('Room', roomSchema);
 
-const save = (homeArray, callback) => {
-  homeArray.forEach((home) => {
-    const item = new Home(home);
+const save = (roomArray, callback) => {
+  roomArray.forEach((room) => {
+    const item = new Room(room);
 
     item.save((err) => {
       if (err) return console.error(err);
-      console.log('success saving a home!');
+      console.log('success saving a room!');
       return console.log('db item.save success');
     });
   });
-  callback();
+  //callback();
 };
 
 const get = (id, callback) => {
-  Home.find({ id }, (err, item) => {
+  Room.find({ id }, (err, item) => {
     if (err) console.log('error from get db function', err);
     callback(item);
     console.log('from the get db request ->', item);
   });
 };
+
+//save(dataGen.roomData);
 
 module.exports.save = save;
 module.exports.get = get;

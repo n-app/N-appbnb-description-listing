@@ -19,31 +19,29 @@ class HomeDescription extends React.Component {
   }
 
   render() {
-    const descriptionContent = this.props.data.map((item, i) => {
-      <div className="descriptionSection" key={i}>
-        <div className="descriptionTitle" className="title_1" >{item.title}</div>
-        <div className="descriptionContent" className="paragraph">{item.comment}</div>
-      </div>
+    const descriptionContent = this.props.data.map((item) => {
+      return (
+        <div className="descriptionSection" key={item.title}>
+          <div className="descriptionTitle" className="title_1">{item.title}</div>
+          <div className="descriptionContent" className="paragraph">{item.comment}</div>
+        </div>
+      );
     });
 
     const descriptionDisplay = this.state.displayDescription ? (
-      <div className="showDescription" >
+      <div className="showDescription">
         <div className="descriptionContent">
           {descriptionContent}
         </div>
-        <div className="button_1">
-          <div className="buttonHover_1" >
-            <div onClick={this.hideDescription} >Hide</div>
-          </div>
-          <div className="arrow">&and;</div>
+        <div className="descriptionReadButton">
+          <button className="button_1" onClick={this.hideDescription}>Hide</button>
+          <span className="arrow">&and;</span>
         </div>
       </div>
     ) : (
-      <div className="button_1" >
-        <div className="buttonHover_1" >
-          <div onClick={this.showDescription} >Read more about the space</div>
-        </div>
-        <div className="arrow"> &or;</div>
+      <div className="descriptionReadButton">
+        <button className="button_1" onClick={this.showDescription}>Read more about the space</button>
+        <span className="arrow"> &or;</span>
       </div>
     );
 
