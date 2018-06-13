@@ -60,7 +60,7 @@ class App extends React.Component {
       );
     }
     return (
-      <div>{JSON.stringify(this.state.home)}</div>
+      <div>Pending...</div>
     );
   }
 }
