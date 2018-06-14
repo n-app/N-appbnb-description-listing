@@ -16,12 +16,12 @@ const Availability = (props) => {
     11: 'Dec',
   };
 
-  const stayRange = props.data.nightsOfMinimumStayForDateRange.map((item) => {
+  const stayRange = props.data.nightsOfMinimumStayForDateRange.map((item, i) => {
     const startDate = new Date(item.startDate);
     const endDate = new Date(item.endDate);
 
     return (
-      <p key={item.nightsOfMinimumStay}>From<span className="strong">{`${month[startDate.getMonth()]} ${startDate.getDate()} - ${month[endDate.getMonth()]} ${endDate.getDate()},${1900 + endDate.getYear()} `}</span>
+      <p key={i}>From<span className="strong">{`${month[startDate.getMonth()]} ${startDate.getDate()} - ${month[endDate.getMonth()]} ${endDate.getDate()},${1900 + endDate.getYear()} `}</span>
         <span>the minimum stay is <span className="strong">{`${item.nightsOfMinimumStay} nights.`}</span></span>
       </p>
     );
@@ -33,7 +33,7 @@ const Availability = (props) => {
         <div className="title_1">Availability</div>
       </div>
       <div className="availabilityTable">
-        <p><span className="strong">{`${props.data.nightsOfMinimumStay} nights `}</span><span>nightsOfMinimumStay</span></p>
+        <p><span className="strong">{`${props.data.nightsOfMinimumStay} nights `}</span><span>nights Of Minimum Stay</span></p>
         {stayRange}
         <p>{`Updated ${props.data.daysFromLastUpdate} days ago`}</p>
       </div>

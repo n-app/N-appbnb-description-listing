@@ -7,6 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(express.static('../public'));
+
 app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.use((req, res, next) => {

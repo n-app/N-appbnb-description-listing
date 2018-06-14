@@ -63,7 +63,7 @@ const get = (id, callback) => {
   Room.find({ id }, (err, item) => {
     if (err) console.log('error from get db function', err);
     callback(item);
-    console.log('from the get db request ->', item);
+    // console.log('from the get db request ->', item);
   });
 };
 

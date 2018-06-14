@@ -104,7 +104,7 @@ const SleepingArrangements = (props) => {
   };
   assignStaying();
 
-  const arrangements = arrayOfRooms.map(room => {
+  const arrangements = arrayOfRooms.map((room, j) => {
     let listOfBeds = '';
     let listOfBedImages = [];
     if (room.beds) {
@@ -114,12 +114,12 @@ const SleepingArrangements = (props) => {
           listOfBeds += ', ';
         }
         return (
-          <img className="icon_3" key={element.url} alt={element.bed} src={element.url} />
+          <img className="icon_3" key={i} alt={element.bed} src={element.url} />
         );
       });
     }
     return (
-      <div key={room.room}>
+      <div key={j}>
         <div className="aRoom">
           <div className="arrangementImages">
             {listOfBedImages.length !== 0 ? listOfBedImages : null}
@@ -136,7 +136,7 @@ const SleepingArrangements = (props) => {
   return (
     <div className="SleepingArrangementsSection">
       <div>
-        <div className="title_1">SleepingArrangements</div>
+        <div className="title_1">Sleeping Arrangements</div>
         <div className="SleepingArrangementsTable">
           {arrangements}
         </div>
