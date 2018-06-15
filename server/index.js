@@ -1,12 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const roomsRoutes = require('./Rooms');
+const path = require ('path');
 
 const app = express();
 
 app.use(bodyParser.json());
 
-app.use(express.static('../public'));
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/favicon.ico', (req, res) => res.status(204));
 
