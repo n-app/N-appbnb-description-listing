@@ -6,12 +6,11 @@ const AmenitiesModal = (props) => {
   if (!props.data.showAmenitiesModal) {
     return null;
   }
-
+  
   return (
-    <div className="backdropStyle">
+    <div className="backdropStyle" onClick={props.onClose}>
       <div className="modalStyle">
-        <input type="image" onClick={props.onClose} alt="exit" className="xButton" src="https://s3-us-west-1.amazonaws.com/napbnb/iconx.png" />
-        <AllAmenities data={props.data.amenities} />
+        <AllAmenities onClose={props.onClose}  data={props.data.amenities} />
       </div>
     </div>
   );
