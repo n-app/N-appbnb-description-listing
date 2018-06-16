@@ -21,7 +21,7 @@ const Availability = (props) => {
     const endDate = new Date(item.endDate);
 
     return (
-      <p key={i}>From<span className="strong">{`${month[startDate.getMonth()]} ${startDate.getDate()} - ${month[endDate.getMonth()]} ${endDate.getDate()},${1900 + endDate.getYear()} `}</span>
+      <p key={i}>From <span className="strong">{`${month[startDate.getMonth()]} ${startDate.getDate()} - ${month[endDate.getMonth()]} ${endDate.getDate()},${1900 + endDate.getYear()} `}</span>
         <span>the minimum stay is <span className="strong">{`${item.nightsOfMinimumStay} nights.`}</span></span>
       </p>
     );
