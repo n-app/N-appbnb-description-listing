@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const dataGen = require('./../aDataGenerator/dataGenerator');
 
-mongoose.connect('mongodb://localhost/NappbnbDB');
+mongoose.connect(process.env.MONGOURL);
 
 const db = mongoose.connection;
 
@@ -44,7 +43,7 @@ const roomSchema = mongoose.Schema({
   daysFromLastUpdate: Number,
 });
 
-const Room = mongoose.model('Room', roomSchema);
+const roomsData = mongoose.model('roomsData', roomSchema);
 
 const save = (roomArray, callback) => {
   roomArray.forEach((room) => {
@@ -60,7 +59,7 @@ const save = (roomArray, callback) => {
 };
 
 const get = (id, callback) => {
-  Room.find({ id }, (err, item) => {
+  roomsData.find({ id }, (err, item) => {
     if (err) console.log('error from get db function', err);
     callback(item);
     // console.log('from the get db request ->', item);

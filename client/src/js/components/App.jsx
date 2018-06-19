@@ -23,7 +23,7 @@ class App extends React.Component {
   }
 
   getHomeData(id) {
-    axios.get(`http://127.0.0.1:3001/rooms/${id}`)
+    axios.get(`/rooms/${id}`)
       .then((response) => {
         const homeData = response.data[0];
         this.setState({ home: homeData });
@@ -33,6 +33,7 @@ class App extends React.Component {
       });
   }
 
+  
   render() {
     if (this.state.home) {
       return (
